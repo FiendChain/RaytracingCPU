@@ -1,0 +1,20 @@
+cmake_minimum_required (VERSION 3.13)
+project ("Raytracing")
+
+set(CMAKE_SKIP_INSTALL_ALL_DEPENDENCY TRUE)
+set(CMAKE_SKIP_BUILD_RPATH FALSE)
+
+set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+
+if (NOT DEFINED CMAKE_INSTALL_RPATH)
+    set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
+else ()
+    message(WARNING "Manually specified install rpath: ${CMAKE_INSTALL_RPATH}")
+endif ()
+
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+set(CMAKE_CXX_STANDARD_REQUIRED 17)
+set(CMAKE_CXX_STANDARD 17)
+
+add_subdirectory(src)
